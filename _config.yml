@@ -7,7 +7,9 @@ remote_theme: "mmistakes/minimal-mistakes@4.15.2"
 minimal_mistakes_skin: "default"
 
 title: Kevin Bohne
-title_separator: "-"
+title_separator: "|"
+breadcrumbs: true
+masthead_title: "Home"
 
 description: &description "TODO FIXME this is a description"
 
@@ -18,13 +20,22 @@ name: &name "Kevin Bohne"
 email: kdbohne@gmail.com
 
 github_username: kdbohne
-github: [metadata]
+linkedin_username: kdbohne
 
 author:
     name: *name
     avatar: /assets/images/portrait.png
     bio: "Graphics programmer"
     location: "Dallas, TX"
+    links:
+      - label: "GitHub"
+        icon: "fab fa-fw fa-github"
+        url: "https://github.com/kdbohne"
+      - label: "LinkedIn"
+        icon: "fab fa-fw fa-linkedin"
+        url: "https://linkedin.com/in/kdbohne"
+
+footer:
     links:
       - label: "GitHub"
         icon: "fab fa-fw fa-github"

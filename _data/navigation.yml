@@ -1,0 +1,11 @@
+main:
+  - title: "Terrain Renderer"
+    url: /terrain.html
+  - title: "Path Tracer"
+    url: /pt.html
+  - title: "K Programming Language"
+    url: /klang.html
+  - title: "About"
+    url: /about.html
+  - title: "Contact"
+    url: /contact.html

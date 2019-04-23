@@ -12,32 +12,22 @@ header:
   overlay_image: /assets/images/terrain_noon.png
 ---
 
-## Overview
+{% comment %}
+HACK: Override the default CSS to change the height of the header.
+TODO: is there a better way of doing this?
+{% endcomment %}
+<style type="text/css">
+.page__hero--overlay { height: 600px; }
+</style>
+
+<div class="no_margin_top">
+<h2>Overview</h2>
+</div>
 
 This is a real-time terrain renderer written using C++ and OpenGL 3.3. The terrain is rendered as a series
 of static meshes (chunks) that are displaced in a vertex shader based on a heightmap. The chunks are
 assembled into a quadtree that is traversed at runtime to provide dynamic level of detail.
 Instanced meshes such as trees and rocks are scattered across the terrain and assigned to chunks.
-
-## Physically Based Rendering
-
-The renderer supports a [physically based](https://en.wikipedia.org/wiki/Physically_based_rendering)
-material model. Each material is represented by four textures (or constants):
- * Albedo (base color)
- * Normal
- * Metallic
- * Roughness
-
-The material is then shaded by combining the [diffuse Lambertian](https://en.wikipedia.org/wiki/Lambertian_reflectance)
-and [specular Cook-Torrance](http://inst.cs.berkeley.edu/~cs294-13/fa09/lectures/cookpaper.pdf)
-[BRDFs](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function) based on the
-incoming direct and indirect light.
-
-<a href="/assets/images/terrain_pbr.png">
-![no-alignment]({{ site.url }}{{ site.baseurl }}/assets/images/terrain_pbr.png)
-</a>
-<figcaption>Physically based materials (top row: dielectric; bottom row: metallic; roughness
-increasing from left to right). Far right: test model and textures</figcaption>
 
 ## Level of Detail
 
@@ -76,6 +66,26 @@ ambient light contribution.
 ![no-alignment]({{ site.url }}{{ site.baseurl }}/assets/images/terrain_sunset.png)
 </a>
 <figcaption>Atmospheric scattering at sunset with visible Rayleigh and Mie scattering</figcaption>
+
+## Physically Based Rendering
+
+The renderer supports a [physically based](https://en.wikipedia.org/wiki/Physically_based_rendering)
+material model. Each material is represented by four textures (or constants):
+ * Albedo (base color)
+ * Normal
+ * Metallic
+ * Roughness
+
+The material is then shaded by combining the [diffuse Lambertian](https://en.wikipedia.org/wiki/Lambertian_reflectance)
+and [specular Cook-Torrance](http://inst.cs.berkeley.edu/~cs294-13/fa09/lectures/cookpaper.pdf)
+[BRDFs](https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function) based on the
+incoming direct and indirect light.
+
+<a href="/assets/images/terrain_pbr.png">
+![no-alignment]({{ site.url }}{{ site.baseurl }}/assets/images/terrain_pbr.png)
+</a>
+<figcaption>Physically based materials (top row: dielectric; bottom row: metallic; roughness
+increasing from left to right). Far right: test model and textures</figcaption>
 
 ## Additional Features
  * Cross-platform support (Windows, Linux)
